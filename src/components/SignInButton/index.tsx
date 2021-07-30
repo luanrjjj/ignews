@@ -10,7 +10,7 @@ export function SignInButton() {
 
 const [session] = useSession()
 
-console.log(200,session)
+
 
     return  session ? (
         <button 
