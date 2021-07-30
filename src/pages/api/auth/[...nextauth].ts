@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import { session, signIn } from 'next-auth/client';
+
 
 import Providers from 'next-auth/providers';
 
