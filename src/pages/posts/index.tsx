@@ -17,7 +17,7 @@ interface PostsProps {
     posts : Post []
 }
 
-export default function Posts({posts}) {
+export default function Posts({posts}:PostsProps) {
     return (
         <>
         <Head>
@@ -28,7 +28,7 @@ export default function Posts({posts}) {
             <div className = {styles.posts}>
                 { posts.map(post => (
                     <Link key = {post.slug} href = {`/posts/preview/${post.slug}`} >
-            <a key = {posts.slug} >
+            <a key = {post.slug} >
                     <time> {post.updatedAt} </time>
                     <strong> {post.title} </strong>
                     <p> {post.excerpt} </p>
@@ -41,6 +41,8 @@ export default function Posts({posts}) {
         </>
     )
 }
+
+
 
 export const getStaticProps : GetStaticProps= async () => {
     const prismic = getPrismicClient();
